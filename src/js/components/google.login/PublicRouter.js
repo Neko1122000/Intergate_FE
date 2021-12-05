@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import { useGoogleAuth } from "../component/GoogleAuthProvider";
+import { useGoogleAuth } from "./GoogleAuthProvider";
 
 const PublicRouter = ({component: Component, ...rest}) => {
 
@@ -11,7 +11,8 @@ const PublicRouter = ({component: Component, ...rest}) => {
             <Route {...rest} render={props => (
                 !isSignedIn ?
                     <Component {...props} /> :
-                    <Redirect exact to="/private" />
+                    // <Redirect exact to="/private" />
+                    <Redirect exact to="/" />
             )} />
         </div>
     );

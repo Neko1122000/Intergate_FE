@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginButton from '../component/LoginButton';
+import LoginButton from './LoginButton';
 
 const PublicPage = () => {
     return (

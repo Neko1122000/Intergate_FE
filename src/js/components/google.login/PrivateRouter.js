@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import { useGoogleAuth } from "../component/GoogleAuthProvider";
+import { useGoogleAuth } from "./GoogleAuthProvider";
 
 const PrivateRouter = ({component: Component, ...rest}) => {
 

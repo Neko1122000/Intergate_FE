@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoutButton from '../component/LogoutButton'
+import LogoutButton from './LogoutButton'
 
 const PrivatePage = () => {
     return (

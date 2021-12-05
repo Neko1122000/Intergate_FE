@@ -13,7 +13,7 @@ export default function Tabs() {
         setActiveTab("tab2");
     };
     return (
-        <div className="Tabs">
+        <div className="Tabs" style={{margin: 0}}>
             {/* Tab nav */}
             <ul className="nav">
                 <li className={activeTab === "tab1" ? "active" : ""}
