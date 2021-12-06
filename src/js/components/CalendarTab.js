@@ -18,9 +18,8 @@ class CalendarTab extends React.Component {
 
     async componentDidMount() {
         await this.getCalendarsFromAPI(`/rest/uet-courses-calendar`);
-        await this.getCalendarsFromAPI(`/rest/google-mail`);
         await this.getCalendarsFromAPI(`/rest/google-calendar`);
-
+        await this.getCalendarsFromAPI(`/rest/google-gmail`);
     }
 
     async getCalendarsFromAPI(url) {
@@ -38,6 +37,7 @@ class CalendarTab extends React.Component {
                 this.setState({calendars : listCalendarsTemp});
 
                 // this.setState({uetCalendars : res.data});
+                console.log(this.state.calendars);
             })
             .catch(error => console.log(error));
     }
@@ -67,7 +67,7 @@ class CalendarTab extends React.Component {
                     plugins={[dayGridPlugin]}
                     initialView="dayGridMonth"
                     weekends={true}
-                    events={this.state.uetCalendars}
+                    events={this.state.calendars}
                 />
             </div>
 
