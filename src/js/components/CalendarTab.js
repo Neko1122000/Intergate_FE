@@ -8,44 +8,47 @@ class CalendarTab extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            uetCalendars: [],
+            calendars: [],
         };
-        this.getUetCalendars = this.getUetCalendars.bind(this);
-        this.getGoogleCalendars = this.getGoogleCalendars.bind(this);
-        this.getCalendarsFromEmail = this.getCalendarsFromEmail.bind(this);
+        this.getCalendarsFromAPI = this.getCalendarsFromAPI.bind(this)
+        // this.getUetCalendars = this.getUetCalendars.bind(this);
+        // this.getGoogleCalendars = this.getGoogleCalendars.bind(this);
+        // this.getCalendarsFromEmail = this.getCalendarsFromEmail.bind(this);
     }
 
     async componentDidMount() {
-        await this.getUetCalendars();
-        await this.getGoogleCalendars();
-        await this.getCalendarsFromEmail();
+        await this.getCalendarsFromAPI(`/rest/uet-courses-calendar`);
+        await this.getCalendarsFromAPI(`/rest/google-mail`);
+        await this.getCalendarsFromAPI(`/rest/google-calendar`);
 
     }
 
-    async getUetCalendars() {
-        await axios.get(`/rest/uet-courses-calendar`)
+    async getCalendarsFromAPI(url) {
+        await axios.get(url)
             .then((res) => {
 
-                var uetCalendarsReSponse = res.data;
+                var calendarsReSponse = res.data;
 
-                let listCalendarsTemp = [...this.state.uetCalendars];
+                let listCalendarsTemp = [...this.state.calendars];
 
-                for(var i = 0; i < uetCalendarsReSponse.length; i++){
-                    listCalendarsTemp.push(uetCalendarsReSponse[i]);
+                for(var i = 0; i < calendarsReSponse.length; i++){
+                    listCalendarsTemp.push(calendarsReSponse[i]);
                 }
 
-                this.setState({uetCalendars : listCalendarsTemp});
+                this.setState({calendars : listCalendarsTemp});
 
                 // this.setState({uetCalendars : res.data});
             })
             .catch(error => console.log(error));
     }
 
-    getGoogleCalendars(){
-    }
-
-    getCalendarsFromEmail(){
-    }
+    // getGoogleCalendars(){
+    // //     /rest/google-mail
+    // // /rest/google-calendar
+    // }
+    //
+    // getCalendarsFromEmail(){
+    // }
 
     render() {
         return (
