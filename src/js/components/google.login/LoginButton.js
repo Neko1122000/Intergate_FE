@@ -23,6 +23,7 @@ const LoginButton = () => {
             </button>
         )}
         buttonText="Login"
+        scope="https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/gmail.readonly"
         onSuccess={responseSuccess}
         onFailure={responseFailure}
         cookiePolicy={'single_host_origin'}
