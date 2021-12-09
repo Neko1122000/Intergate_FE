@@ -1,14 +1,15 @@
 import React from 'react';
-import { useGoogleAuth } from './GoogleAuthProvider';
+//import { useGoogleAuth } from './GoogleAuthProvider';
+import { useGoogleLogout } from 'react-google-login'
 
 const LogoutButton = () => {
-    const { signOut } = useGoogleAuth();
+    //const { signOut } = useGoogleAuth();
 
     return (
         // <button onClick={signOut}>Logout</button>
         <button className="btn btn-primary d-block w-100 btn-signin" id="sign-in-google"
                 type="button"
-                onClick={signOut}
+                //onClick={signOut}
         >Log out
         </button>
     );

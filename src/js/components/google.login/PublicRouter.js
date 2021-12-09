@@ -4,7 +4,8 @@ import { useGoogleAuth } from "./GoogleAuthProvider";
 
 const PublicRouter = ({component: Component, ...rest}) => {
 
-    const { isSignedIn } = useGoogleAuth();
+    //const { isSignedIn } = useGoogleAuth();
+    const isSignedIn = false;
 
     return (
         <div>

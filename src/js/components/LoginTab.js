@@ -12,7 +12,7 @@ class LoginTab extends React.Component {
         this.state={
             visible : false,
             isLogInUETCoursesSuccess : false
-        }
+        };
     }
 
     onShowAlert = ()=>{
@@ -102,7 +102,7 @@ class LoginTab extends React.Component {
                                         {/*        type="button">Sign In with Google*/}
                                         {/*</button>*/}
                                         <LoginButton/>
-                                        <LogoutButton/>
+                                        {/* <LogoutButton/> */}
                                     </div>
                                 </form>
                             </section>

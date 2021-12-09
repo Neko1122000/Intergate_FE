@@ -2,7 +2,7 @@ import '../css/App.css';
 import Tabs from "./components/Tabs"
 import PrivateRouter from './components/google.login/PrivateRouter';
 import PublicRouter from './components/google.login/PublicRouter';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Switch, Router} from 'react-router-dom';
 // import PrivatePage from './components/google.login/PrivatePage'
 // import PublicPage from './components/google.login/PublicPage'
 
@@ -23,7 +23,6 @@ export default function App() {
                     {/*<PrivateRouter path="/private" component={PrivatePage} />*/}
                     <PrivateRouter path="/" component={Tabs} />
                 </div>
-
             </BrowserRouter>
 
         </div>
