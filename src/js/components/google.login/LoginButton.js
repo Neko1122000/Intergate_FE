@@ -4,7 +4,7 @@ import GoogleLogin from 'react-google-login';
 const LoginButton = () => {
 
     const responseSuccess = (res) => {
-        fetch('http://localhost:8080/api/integration/google-auth', {
+        fetch('/api/integration/google-auth', {
             method: 'POST',
             body: JSON.stringify(res),
             headers: {

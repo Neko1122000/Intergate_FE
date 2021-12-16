@@ -39,7 +39,7 @@ class LoginTab extends React.Component {
         })
         .then((res) => res.json())
         .then(res => {
-            fetch('http://localhost:8080/api/integration/uet-auth', {
+            fetch('/api/integration/uet-auth', {
                 method: 'POST',
                 body: JSON.stringify(res),
                 headers: {

@@ -11,7 +11,7 @@ import { Routes } from './Routes';
 
 const doLogin = (username, password, cb) => {
     // login
-    fetch('http://localhost:8080/api/auth/signin', {
+    fetch('/api/auth/signin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ const doLogin = (username, password, cb) => {
 
 const doRegister = (username, password, cb) => {
     // register
-    fetch('http://localhost:8080/api/auth/signup', {
+    fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
