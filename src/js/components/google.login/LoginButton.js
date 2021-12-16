@@ -4,7 +4,18 @@ import GoogleLogin from 'react-google-login';
 const LoginButton = () => {
 
     const responseSuccess = (res) => {
-        console.log(res);
+        fetch('http://localhost:8080/api/integration/google-auth', {
+            method: 'POST',
+            body: JSON.stringify(res),
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(res => {
+            console.log(res);
+        })
     };
 
     const responseFailure = (res) => {
@@ -23,6 +34,9 @@ const LoginButton = () => {
             </button>
         )}
         buttonText="Login"
+        isSignedIn={true}
+        responseType="code"
+        prompt="consent"
         scope="https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/gmail.readonly"
         onSuccess={responseSuccess}
         onFailure={responseFailure}

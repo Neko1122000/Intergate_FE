@@ -28,17 +28,30 @@ class LoginTab extends React.Component {
         var serialize = require('form-serialize');
         var form = document.querySelector('#uet-auth-form');
 
-        var uetCreds = serialize(form);
+        var uetCreds = serialize(form); 
 
-        fetch('/rest/uet-auth', {
-            method: 'post',
+        fetch('https://courses.uet.vnu.edu.vn/login/token.php?service=moodle_mobile_app', {
+            method: 'POST',
             body: uetCreds,
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
-        }).then(function(response) {
-            console.log(response.json());
-        });
+        })
+        .then((res) => res.json())
+        .then(res => {
+            fetch('http://localhost:8080/api/integration/uet-auth', {
+                method: 'POST',
+                body: JSON.stringify(res),
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+            })
+        })
 
         this.onShowAlert();
 
