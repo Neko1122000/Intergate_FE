@@ -1,11 +1,10 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-//import { useGoogleAuth } from "./GoogleAuthProvider";
+import { useGoogleAuth } from "./GoogleAuthProvider";
 
 const PrivateRouter = ({component: Component, ...rest}) => {
 
     //const { isSignedIn } = useGoogleAuth();
-
     const isSignedIn = false;
 
     return (

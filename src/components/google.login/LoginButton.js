@@ -1,10 +1,9 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
-
 const LoginButton = () => {
 
     const responseSuccess = (res) => {
-        fetch('/api/integration/google-auth', {
+        fetch(`${process.env.REACT_APP_BASE_URL}/api/integration/google-auth`, {
             method: 'POST',
             body: JSON.stringify(res),
             headers: {

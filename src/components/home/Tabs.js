@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import CalendarTab from "./CalendarTab"
 import LoginTab from "./LoginTab"
 
-export default function Tabs() {
+export default function Tabs(props) {
     const [activeTab, setActiveTab] = useState("tab1");
     const handleTab1 = () => {
         // update the state to tab1

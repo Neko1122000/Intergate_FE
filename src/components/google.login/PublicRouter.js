@@ -12,7 +12,6 @@ const PublicRouter = ({component: Component, ...rest}) => {
             <Route {...rest} render={props => (
                 !isSignedIn ?
                     <Component {...props} /> :
-                    // <Redirect exact to="/private" />
                     <Redirect exact to="/" />
             )} />
         </div>
