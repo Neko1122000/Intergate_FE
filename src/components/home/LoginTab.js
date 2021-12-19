@@ -3,6 +3,7 @@ import "../../css/Login-Form-Clean.css"
 import "../../bootstrap/css/bootstrap.min.css"
 import Alert from 'react-bootstrap/Alert'
 import LoginButton from '../../components/google.login/LoginButton'
+import LogoutButton from '../../components/google.login/LogoutButton'
 
 class LoginTab extends React.Component {
 
@@ -102,6 +103,7 @@ class LoginTab extends React.Component {
                                                 className="justify-content-center align-items-center text-center"
                                                 data-width="240" data-height="36" data-longtitle="true"/>
                                             <LoginButton/>
+                                            <LogoutButton/>
                                         </div>
                                     </form>
                                 </section>

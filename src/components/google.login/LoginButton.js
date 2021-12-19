@@ -27,7 +27,7 @@ const LoginButton = () => {
         clientId="905434550263-fe4nhl3ec5u3r1tnkd77pq64053ddb6m.apps.googleusercontent.com"
         render={renderProps => (
             <button className="btn btn-primary d-block w-100 btn-signin" id="sign-in-google"
-                    type="button" style={{marginTop:'97px'}}
+                    type="button" style={{marginTop:'25.5px'}}
                     onClick={renderProps.onClick}
             >Sign In with Google
             </button>
