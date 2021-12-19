@@ -103,7 +103,6 @@ class LoginTab extends React.Component {
                                                 className="justify-content-center align-items-center text-center"
                                                 data-width="240" data-height="36" data-longtitle="true"/>
                                             <LoginButton/>
-                                            <LogoutButton/>
                                         </div>
                                     </form>
                                 </section>

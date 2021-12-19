@@ -40,7 +40,9 @@ const doRegister = (username, password, cb) => {
     })
     .then(res => res.json())
     .then(res => {
-        cb(res.data.accessToken);
+        if (res.status === 'SUCCESS') {
+            doLogin(username, password, cb);
+        }
     });
 };
 

@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import CalendarTab from "./CalendarTab"
 import LoginTab from "./LoginTab"
+import { BrowserRouter, Redirect, Switch, Route, Link } from "react-router-dom";
 
 export default function Tabs(props) {
     const [activeTab, setActiveTab] = useState("tab1");
@@ -13,18 +14,39 @@ export default function Tabs(props) {
         setActiveTab("tab2");
     };
     return (
-        <div className="Tabs" style={{margin: 0}}>
-            {/* Tab nav */}
-            <ul className="nav">
-                <li className={activeTab === "tab1" ? "active" : ""}
-                    onClick={handleTab1}>
-                    Login
-                </li>
-                <li className={activeTab === "tab2" ? "active" : ""}
-                    onClick={handleTab2}>Calendar</li>
-            </ul>
-            <div className="outlet">
-                {activeTab === "tab1" ? <LoginTab /> : <CalendarTab />}
-            </div>
-        </div>    );
+        <>
+            <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+            <div className="container">
+                <Link className="navbar-brand" to={"/"} style={{color:'white',fontSize:'15px'}}>
+                    SYSTEM INTEGRATION
+                </Link>
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul className="navbar-nav">
+                        <Link className="navbar-nav1" style={{color: 'white', textDecoration:'none', fontSize:'14px'}} to={"/sign-in"}>Sync</Link>
+                        <p style={{color:'white', marginTop:'15px'}}>/</p>
+                        <Link className="navbar-nav2" style={{color: 'white', textDecoration:'none', fontSize:'14px'}} to={"/"} onClick={e => {
+                            e.preventDefault();
+                            localStorage.clear();
+                            window.location.reload();
+                        }}>Logout</Link>
+                    </ul>
+                </div>
+                </div>
+            </nav>
+            <div className="Tabs" style={{marginTop: 72}}>
+                {/* Tab nav */}
+                <ul className="nav">
+                    <li className={activeTab === "tab1" ? "active" : ""}
+                        onClick={handleTab1}>
+                        Login
+                    </li>
+                    <li className={activeTab === "tab2" ? "active" : ""}
+                        onClick={handleTab2}>Calendar</li>
+                </ul>
+                <div className="outlet">
+                    {activeTab === "tab1" ? <LoginTab /> : <CalendarTab />}
+                </div>
+            </div>    
+        </>
+    );
 };
