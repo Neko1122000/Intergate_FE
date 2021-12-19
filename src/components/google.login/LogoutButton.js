@@ -1,30 +1,20 @@
 import React from 'react';
-import { useGoogleLogout } from 'react-google-login';
+//import { useNavigate } from "react-router-dom";
 
-const clientId = '905434550263-fe4nhl3ec5u3r1tnkd77pq64053ddb6m.apps.googleusercontent.com';
-
-function LogoutButton(props){
-    const onLogoutSuccess = (res) => {
-        alert('Loogged out Successfully');
-    };
-    const onFailure = () => {
-        console.log('Handle failure success');
-    };
-
-    const { signOut } = useGoogleLogout({
-        clientId,
-        onLogoutSuccess,
-        onFailure
-    });
-
-
+function LogoutButton(props) {
     return (
         // <button onClick={signOut}>Logout</button>
-        <button className="btn btn-primary d-block w-100 btn-signin" id="sign-in-google"
-                type="button"
-                onClick={signOut}
-        >Sign out
-        </button>
+        <div>
+            <button className="btn btn-primary d-block w-30 btn-signin" id="sign-in-google"
+                    type="button"
+                    style={{position: 'fixed', top: 50, right: 20}}
+                    onClick={() => {
+                        localStorage.clear();
+                        window.location.reload();
+                    }}
+            >Sign out
+            </button>
+        </div>
     );
 };
 
