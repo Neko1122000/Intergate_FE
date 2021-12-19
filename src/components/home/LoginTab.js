@@ -3,7 +3,6 @@ import "../../css/Login-Form-Clean.css"
 import "../../bootstrap/css/bootstrap.min.css"
 import Alert from 'react-bootstrap/Alert'
 import LoginButton from '../../components/google.login/LoginButton'
-import LogoutButton from '../../components/google.login/LogoutButton'
 
 class LoginTab extends React.Component {
 
@@ -111,7 +110,6 @@ class LoginTab extends React.Component {
                     </div>
                 </section>
 
-                <LogoutButton/>
 
                 <div>
                     <Alert color="success" variant="success" show={this.state.visible}>
