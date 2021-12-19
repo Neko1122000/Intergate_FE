@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
-import { BrowserRouter,Routes, Route,Link} from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import './css/App.css';
 import {AppRoutes} from './components/Routes';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
-import Home from './components/home/Home';
+
 
 const doLogin = (username, password, cb) => {
     // login
@@ -56,15 +54,9 @@ function App() {
 
   return (
     <div className="App" style={{display: "block"}}>
-        <div className="welcome">Hệ thống đồng bộ lịch biểu
-        <br/>
-            Nhóm 2 - K63T - Tích hợp hệ thống
-        </div>
-
         <BrowserRouter>
             <AppRoutes isAuthorized={isAuthorized} setAccessToken={setAccessToken} doLogin={doLogin} doRegister={doRegister}/>
         </BrowserRouter>
-
     </div>
   );
 

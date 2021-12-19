@@ -8,7 +8,7 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
 
     return (
-        <form className="auth-form login-form">
+        <form className="auth-form">
             <h3>Login</h3>
             <div className="form-group">
                 <label>Username</label>
@@ -27,8 +27,8 @@ const Login = (props) => {
                         });
                     }} style={{textDecoration:'none', color:'black'}} to="/home">Confirm</Link>
                 </button>
-                <button type="submit" style={{width:'250px',border:'1px solid gray',borderRadius: '10px'}} >  
-                    <Link style={{textDecoration:'none', color:'black'}} to="/sign-up">Chưa có tài khoản? Đăng Ký!</Link>
+                <button type="submit" style={{width:'300px',border:'1px solid gray',borderRadius: '10px'}} >  
+                        <Link style={{textDecoration:'none', color:'black'}} to="/sign-up"> Don't have an account? Sign up!</Link>
                 </button>
             </div>
         </form>

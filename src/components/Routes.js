@@ -1,4 +1,5 @@
-import { Button } from "react-bootstrap";
+/* eslint-disable jsx-a11y/alt-text */
+// import { Button } from "react-bootstrap";
 import React from "react";
 import { BrowserRouter, Redirect, Switch, Route, Link } from "react-router-dom";
 import SignUp from './SignUp';
@@ -7,39 +8,42 @@ import Home from './home/Home';
 import BasePage from "./BasePage";
 //import { Logout, AuthPage } from "./modules/Auth";
 
-    {/*<div>
-        <Button 
-            variant="primary"
-            onClick={() => {
-                doLogin('zachtrong', '123456', (token) => {
-                    setAccessToken(token);
-                })
-            }}
-        >
-            Login
-        </Button>
+    // {/*<div>
+    //     <Button 
+    //         variant="primary"
+    //         onClick={() => {
+    //             doLogin('zachtrong', '123456', (token) => {
+    //                 setAccessToken(token);
+    //             })
+    //         }}
+    //     >
+    //         Login
+    //     </Button>
 
-        <Button 
-            variant="primary"
-            onClick={() => {
-                doRegister('account_registration', '123456', (token) => {
-                    setAccessToken(token);
-                })
-            }}
-        >
-            Register
-        </Button>
-    </div> */}
+    //     <Button 
+    //         variant="primary"
+    //         onClick={() => {
+    //             doRegister('account_registration', '123456', (token) => {
+    //                 setAccessToken(token);
+    //             })
+    //         }}
+    //     >
+    //         Register
+    //     </Button>
+    // </div> */}
 const AuthPage = ({doLogin, doRegister, setAccessToken}) => (
     <BrowserRouter>
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to={"/"}>Διάβολος</Link>
+            <Link className="navbar-brand" to={"/"} style={{color:'white',fontSize:'15px'}}>
+                SYSTEM INTEGRATION
+            </Link>
               <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul className="navbar-nav">
-                    <Link style={{color: 'black', textDecoration:'none'}} to={"/sign-in"}>Sign in</Link> /
-                    <Link style={{color: 'black', textDecoration:'none'}} to={"/sign-up"}>Sign up</Link>
+                    <Link className="navbar-nav1" style={{color: 'white', textDecoration:'none',fontSize:'14px'}} to={"/sign-in"}>Sign in</Link>
+                    <p style={{color:'white', marginTop:'15px'}}>/</p>
+                    <Link className="navbar-nav2" style={{color: 'white', textDecoration:'none',fontSize:'14px'}} to={"/sign-up"}>Sign up</Link>
                 </ul>
               </div>
             </div>

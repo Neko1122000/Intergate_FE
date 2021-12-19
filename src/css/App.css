@@ -11,7 +11,7 @@ body {
   display: flex;
   font-weight: 400;
   font-family: sans-serif;
-  background: url("../img/background3.jpg");
+  background: url("../img/ERP-blog-header-2.jpeg");
   background-size: cover;
   
 }
@@ -22,14 +22,25 @@ body, html, .App, #root, .outer {
 }
 
 .navbar-light {
-  background-color: #ffffff;
+  background-color: #053742;
   box-shadow: 0px 20px 80px rgba(34, 35, 58, 0.2);
 }
 .navbar-nav{
-  margin-left: 850px;
+  margin-left: 810px;
   align-items: center;
   height: var(--navbar-height);
 }
+.navbar-nav1:hover{
+  background:#009dcc4d;
+  border-color: #009dcc4d;
+  width:40px;
+}
+.navbar-nav2:hover{
+  background:#009dcc4d;
+  border-color: #009dcc4d;
+  width:48px;
+}
+
 
 .outer {
   display: flex;
@@ -62,6 +73,7 @@ body, html, .App, #root, .outer {
 }
 .form-group{
   margin: 30px;
+  
 }
 .form-control__submit{
   margin: 30px;

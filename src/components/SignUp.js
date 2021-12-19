@@ -17,7 +17,7 @@ export default class SignUp extends React.Component {
                         <Link style={{textDecoration:'none', color:'black'}} to="/home">Confirm</Link>
                     </button>
                     <button type="submit" style={{width:'250px',border:'1px solid gray',borderRadius: '10px'}} >  
-                        <Link style={{textDecoration:'none', color:'black'}} to="/sign-in">Đã có tài khoản? Đăng Nhập</Link>
+                        <Link style={{textDecoration:'none', color:'black'}} to="/sign-in">Do have an account?Log in</Link>
                     </button>
                 </div>
             </form>
