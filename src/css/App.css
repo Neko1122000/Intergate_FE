@@ -68,7 +68,7 @@ body, html, .App, #root, .outer {
 .form-control{
   margin: 10px;
   width:350px;
-  border:1px solid gray;
+  border:1px solid #dbd7e34a;
   border-radius: 10px;
 }
 .form-group{
@@ -78,6 +78,9 @@ body, html, .App, #root, .outer {
 .form-control__submit{
   margin: 30px;
   margin-left:50px;
+}
+.meo:hover{
+  border-color: #dbd7e34a;background:#dbd7e34a;
 }
 .form-control__submit2{
   text-align:center;
