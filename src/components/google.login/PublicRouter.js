@@ -1,6 +1,5 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
-import { useGoogleAuth } from "./GoogleAuthProvider";
 
 const PublicRouter = ({component: Component, ...rest}) => {
 
