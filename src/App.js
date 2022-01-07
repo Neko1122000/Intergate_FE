@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
-import { BrowserRouter,Routes, Route,Link} from "react-router-dom";
+import { BrowserRouter} from "react-router-dom";
 import './css/App.css';
 import {AppRoutes} from './components/Routes';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
-import Home from './components/home/Home';
 
-const doLogin = (username, password, cb) => {
+
+const doLogin = (username, password, cb, cb_err) => {
+
     // login
     fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/signin`, {
         method: 'POST',
@@ -20,15 +19,15 @@ const doLogin = (username, password, cb) => {
     })
     .then(res => res.json()) 
     .then(res => {
-        if (!res.error) {
+        if (!!res?.data?.accessToken) {
             cb(res.data.accessToken);
         } else {
-            console.log('error');
+            cb_err('Tài khoản hoặc mật khẩu không đúng')
         }
     });
 };
 
-const doRegister = (username, password, cb) => {
+const doRegister = (username, password, cb, cb_err) => {
     // register
     fetch(`${process.env.REACT_APP_BASE_URL}/api/auth/signup`, {
         method: 'POST',
@@ -42,7 +41,11 @@ const doRegister = (username, password, cb) => {
     })
     .then(res => res.json())
     .then(res => {
-        cb(res.data.accessToken);
+        if (res.status === 'SUCCESS') {
+            doLogin(username, password, cb, cb_err);
+        }else{
+            cb_err('Tài khoản đã tồn tại')
+        }
     });
 };
 
@@ -56,15 +59,9 @@ function App() {
 
   return (
     <div className="App" style={{display: "block"}}>
-        <div className="welcome">Hệ thống đồng bộ lịch biểu
-        <br/>
-            Nhóm 2 - K63T - Tích hợp hệ thống
-        </div>
-
         <BrowserRouter>
             <AppRoutes isAuthorized={isAuthorized} setAccessToken={setAccessToken} doLogin={doLogin} doRegister={doRegister}/>
         </BrowserRouter>
-
     </div>
   );
 
