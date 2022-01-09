@@ -106,7 +106,7 @@ class LoginTab extends React.Component {
                                         </div>
                                         <button className="btn btn-primary d-block w-100 btn-signin" type="button"
                                                 onClick={this.submitLoginUetCourses}
-                                        >Sign In</button>
+                                        >Sign In UET Courses</button>
                                         <div className="mb-3"/>
                                     </form>
                                 </section>
